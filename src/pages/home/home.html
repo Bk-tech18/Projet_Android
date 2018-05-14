@@ -1,14 +1,31 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      SGStock
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<button ion-button icon-left>
+  <ion-icon name="home"></ion-icon>
+  Left Icon
+</button>
+<ion-grid text-center class="couleur-bleu">
+  <ion-row >
+    <ion-col col-6>
+      <button ion-button outline>A</button><br> Article
+      </ion-col>
+    <ion-col col-6>
+      <button ion-button outline>C</button><br>Catégorie
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-6 text-center >
+      <button ion-button outline>H</button> <br> Historique
+    </ion-col>
+    <ion-col col-6><button ion-button outline>?</button><br> Help
+  </ion-col>
+  </ion-row>
+</ion-grid>
 </ion-content>
