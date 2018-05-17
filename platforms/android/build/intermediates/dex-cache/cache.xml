@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/home/koassa/projetMobile/SGStock/platforms/android/build/intermediates/exploded-aar/org.apache.cordova/CordovaLib/6.2.3/debug/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="b142e102c14ed15086b68cfe3ef6614367115421">
+        <dex dex="/home/koassa/projetMobile/SGStock/platforms/android/build/intermediates/pre-dexed/debug/CordovaLib-6.2.3-debug_dce8a835c8facb9dea68abfc18a382d76cace712.jar" />
+    </item>
+
+</items>
