@@ -14,8 +14,14 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class CategoriePage {
 
+  items: Array< string>;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  
+        
+	  this.items = [
+	      'a','b','c','d'
+	    ];
+  	}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CategoriePage');

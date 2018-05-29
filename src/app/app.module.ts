@@ -12,6 +12,8 @@ import { CategoriePage } from '../pages/categorie/categorie';
 import { HistoriquePage } from '../pages/historique/historique';
 import { HelpPage } from '../pages/help/help';
 import { SQLitePage } from '../pages/sqlite/sqlite';
+import { TabsPage } from '../pages/tabs/tabs';
+import { SearchPage } from '../pages/search/search';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { SQLitePage } from '../pages/sqlite/sqlite';
     CategoriePage,
     HistoriquePage,
     HelpPage,
-    SQLitePage
+    SQLitePage,
+    SearchPage,
+    TabsPage
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,9 @@ import { SQLitePage } from '../pages/sqlite/sqlite';
     CategoriePage,
     HistoriquePage,
     HelpPage,
-    SQLitePage
+    SQLitePage,
+    SearchPage,
+    TabsPage
   ],
   providers: [
     StatusBar,
