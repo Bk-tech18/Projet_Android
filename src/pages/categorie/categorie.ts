@@ -1,30 +1,35 @@
+import { DatabaseProvider } from './../../providers/database/database';
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the CategoriePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
+import { NavController, Platform } from 'ionic-angular';
+ 
 @Component({
   selector: 'page-categorie',
-  templateUrl: 'categorie.html',
+  templateUrl: 'categorie.html'
 })
 export class CategoriePage {
-
-  items: Array< string>;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  
-        
-	  this.items = [
-	      'a','b','c','d'
-	    ];
-  	}
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CategoriePage');
+  categ = {};
+  categs = [];
+ 
+  constructor(public navCtrl: NavController, private databaseprovider: DatabaseProvider, private platform: Platform) {
+    this.databaseprovider.getDatabaseState().subscribe(rdy => {
+      if (rdy) {
+        this.loadcategData();
+      }
+    })
   }
-
+ 
+  loadcategData() {
+    this.databaseprovider.getAllcategs().then(data => {
+      this.categs = data;
+    })
+  }
+ 
+  addcateg() {
+    this.databaseprovider.addcateg(this.categ['name'], this.categ['skill'], parseInt(this.categ['yearsOfExperience']))
+    .then(data => {
+      this.loadcategData();
+    });
+    this.categ = {};
+  }
+ 
 }

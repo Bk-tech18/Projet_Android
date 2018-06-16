@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/home/koassa/projetMobile/SGStock/platforms/android/libs"><file name="sqlite-native-driver.jar" path="/home/koassa/projetMobile/SGStock/platforms/android/libs/sqlite-native-driver.jar"/><file name="sqlite-connector.jar" path="/home/koassa/projetMobile/SGStock/platforms/android/libs/sqlite-connector.jar"/></source></dataSet><dataSet config="release"><source path="/home/koassa/projetMobile/SGStock/platforms/android/src/release/jniLibs"/></dataSet></merger>

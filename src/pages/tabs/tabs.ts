@@ -1,31 +1,25 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the TabsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { NavController, NavParams ,App} from 'ionic-angular';
+//import { ArticlePage } from '../article/article';
+//import { AddarticlePage } from '../add-article/add-article';
+//import { CategoriePage } from '../categorie/categorie';
+// tabsPage contient la liste des articles
 
 @Component({
   selector: 'page-tabs',
   templateUrl: 'tabs.html',
-  template: `
-  <ion-header>
-    <ion-navbar>
-      <ion-title>Heart</ion-title>
-    </ion-navbar>
-  </ion-header>
-  <ion-content>TabsPage</ion-content>`
+  
 })
 export class TabsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,public app: App, public navParams: NavParams) {
+    /*cat: CategoriePage = new CategoriePage();
+    cat.detail;*/
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TabsPage');
   }
 
+ 
 }

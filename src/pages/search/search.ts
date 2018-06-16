@@ -11,13 +11,7 @@ import { NavController, NavParams } from 'ionic-angular';
 @Component({
   selector: 'page-search',
   templateUrl: 'search.html',
-  template: `
-  <ion-header>
-    <ion-navbar>
-      <ion-title>Star</ion-title>
-    </ion-navbar>
-  </ion-header>
-  <ion-content>Tab 2</ion-content>`
+  
 })
 export class SearchPage {
 

@@ -1,5 +1,4 @@
-//import { Component } from '@angular/core';
-//import { NavController } from 'ionic-angular';
+
 import { Component, ViewChild } from '@angular/core';
 import { App, NavController, NavParams, Nav } from 'ionic-angular';
 
@@ -8,6 +7,10 @@ import { ArticlePage } from '../article/article';
 import { CategoriePage } from '../categorie/categorie';
 import { HistoriquePage } from '../historique/historique';
 import { HelpPage } from '../help/help';
+import { BilanPage } from '../bilan/bilan';
+import { EntreePage } from '../entree/entree';
+import { SortiePage } from '../sortie/sortie';
+//import { SQLitePage } from '../sqlite/sqlite';
 
 @Component({
   selector: 'page-home',
@@ -23,21 +26,21 @@ export class HomePage {
 	      { title: 'Article', component: ArticlePage, icon:'A' },
 	      { title: 'Catégorie', component: CategoriePage, icon:'C' },
 	      { title: 'Historique', component: HistoriquePage, icon:'H' },
-        { title: 'Help', component: HelpPage, icon:'?' }
+        { title: 'Help', component: HelpPage, icon:'?' },
+        { title: 'Bilan', component: BilanPage, icon:'B' },
+	      { title: 'Entrées', component: EntreePage, icon:'E' },
+        { title: 'Sorties', component: SortiePage, icon:'S' }
+      //  { title: 'SQLite', component: SQLitePage, icon:'S' }
 	    ];
   	}
 
   openPage(page) {
-    // That's right, we're pushing to ourselves!
-    //this.navCtrl.push(ListPage);
-    //his.nav.setRoot(page.component);
+   
     let nav = this.app.getRootNav();
     nav.setRoot(page.component);
   }
    homePage(){
-    // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
-    //this.nav.setRoot(HomePage);
+    
     let nav = this.app.getRootNav();
     nav.setRoot(HomePage);
     }

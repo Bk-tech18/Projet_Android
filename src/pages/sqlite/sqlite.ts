@@ -15,6 +15,7 @@ const DATABASE_FILE_NAME: string ='data.db';
 })
 export class SQLitePage {
 	private db: SQLiteObject;
+	data = {categ:"" };
   constructor(public navCtrl: NavController, private sqlite: SQLite) {
 
   	this.createDatabaseFile();
@@ -25,7 +26,7 @@ private createDatabaseFile():void{
 			name: DATABASE_FILE_NAME,
 			 location: 'default'
 			})
-  .then((db: SQLiteObject) => {
+  		.then((db: SQLiteObject) => {
   		console.log('bd creer');
   		this.db = db;
   		this.createTables();
@@ -51,8 +52,17 @@ private createDatabaseFile():void{
 			})
 
 	    .catch(e => console.log(e));
-      	}
+  }
 	
+	public Enregistrer(){
+		this.sqlite.create({
+			name: DATABASE_FILE_NAME,
+			 location: 'default'
+			})
+  		.then((db: SQLiteObject) => {
+			db.executeSql('insert into `CATEGORIE` (`categorie`) values (null,?)', [this.data.categ]);
+			}).catch(e => console.log(e));
+		}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SQLitePage');

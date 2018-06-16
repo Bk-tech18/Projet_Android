@@ -3,6 +3,8 @@ import { NavController,App, NavParams } from 'ionic-angular';
 
 import { SearchPage } from '../search/search';
 import { TabsPage } from '../tabs/tabs';
+import { AddarticlePage } from '../add-article/add-article';
+//import { FormPage } from 'form-art';
 
 @Component({
   selector: 'page-article',
@@ -13,22 +15,20 @@ import { TabsPage } from '../tabs/tabs';
 	<button ion-button menuToggle>
       <ion-icon name="home"></ion-icon>
     </button>
-    <ion-buttons start>
-      <button ion-button icon-only color="royal">
-        <ion-icon name="search"></ion-icon>
-      </button>
-    </ion-buttons>
-    <ion-title>article</ion-title>
+    
+    <ion-title>Article </ion-title>
     <ion-buttons end>
-      <button ion-button icon-only color="royal">
-      <ion-icon name="add"></ion-icon>
+      <button ion-button icon-only color="royal" (click)="addArticle()" >
+      <ion-icon name="md-add"></ion-icon>
       </button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
+   
     <ion-tabs>
-      <ion-tab tabIcon="heart" [root]="TabsPage"></ion-tab>
-      <ion-tab tabIcon="star" [root]="SearchPage"></ion-tab>
+      <ion-tab tabIcon="clipboard" [root]="TabsPage"></ion-tab>
+      <ion-tab tabIcon="search" [root]="SearchPage">g</ion-tab>
     </ion-tabs>`
 
 })
@@ -47,7 +47,21 @@ export class ArticlePage {
 	    ];
   	}
 
-  
+  addArticle(){
+    
+     // let nav = this.app.getRootNav();
+     // nav.setRoot(AddarticlePage);
+     
+		  this.navCtrl.push(AddarticlePage);
+		
+    }
+    
+    SupprimerArt(){
+      
+    }
+    ModifierArt(){
+      
+    }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ArticlePage');
