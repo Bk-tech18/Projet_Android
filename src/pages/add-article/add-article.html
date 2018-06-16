@@ -18,31 +18,35 @@
       <!--button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
         {{ item }}
       </button-->  
-     
-      <ion-item>
-        <ion-label >Nom:</ion-label><ion-input type="text"></ion-input>
+      <!-- <ion-item>
+        <ion-label stacked>Nom Catégorie</ion-label>
+        <ion-input [(ngModel)]="categ.name" placeholder="categ Name"></ion-input>
       </ion-item>
+      
+      <button ion-button full (click)="addcateg()">Enregistrer Catégorie</button>
+     -->
+      <ion-item>
+        <ion-label >Nom:</ion-label>
+        <ion-input [(ngModel)]="art.nom" placeholder="Nom article"></ion-input>
+      </ion-item> 
       
       <ion-item> 
       <ion-label >Catégorie</ion-label>
-      <ion-select [(ngModel)]="gaming">
-        <ion-option value="nes">NES</ion-option>
-        <ion-option value="n64">Nintendo64</ion-option>
-        <ion-option value="ps">PlayStation</ion-option>
-        <ion-option value="genesis">Sega Genesis</ion-option>
-        <ion-option value="saturn">Sega Saturn</ion-option>
-        <ion-option value="snes">SNES</ion-option>
+      <ion-select [(ngModel)]="art.categorieId" *ngFor="let cat of categos">
+        <ion-option value= {{ cat.idCat }}> {{ cat.name }}</ion-option>
       </ion-select>
   
       </ion-item>
       <ion-item>
-          <ion-label >Quantité:</ion-label><ion-input type="text"></ion-input>
-          </ion-item>
+          <ion-label >Quantité:</ion-label>
+          <ion-input [(ngModel)]="art.QuantiteArt" placeholder="Quantité Article"></ion-input>
+      </ion-item>
       <ion-item>
-      <ion-label >Prix Unitaire:</ion-label><ion-input type="text"></ion-input>
+      <ion-label >Prix Unitaire:</ion-label>
+      <ion-input [(ngModel)]="art.prixUnit" placeholder="prix Unitaire"></ion-input>
       </ion-item>
       <div padding>
-        <button ion-button outline >Enregistrer</button>
+        <button ion-button full (click)="addart()" >Enregistrer</button>
       </div>
     </ion-list>
   </ion-content>

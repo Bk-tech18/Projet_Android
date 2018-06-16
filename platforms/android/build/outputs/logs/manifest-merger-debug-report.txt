@@ -2,21 +2,21 @@
 manifest
 ADDED from /home/koassa/projetMobile/SGStock/platforms/android/AndroidManifest.xml:2:1-14:12
 	package
-		ADDED from /home/koassa/projetMobile/SGStock/platforms/android/AndroidManifest.xml:2:98-124
+		ADDED from /home/koassa/projetMobile/SGStock/platforms/android/AndroidManifest.xml:2:102-128
 		INJECTED from /home/koassa/projetMobile/SGStock/platforms/android/AndroidManifest.xml
 		INJECTED from /home/koassa/projetMobile/SGStock/platforms/android/AndroidManifest.xml
 	android:versionName
-		ADDED from /home/koassa/projetMobile/SGStock/platforms/android/AndroidManifest.xml:2:70-97
+		ADDED from /home/koassa/projetMobile/SGStock/platforms/android/AndroidManifest.xml:2:74-101
 		INJECTED from /home/koassa/projetMobile/SGStock/platforms/android/AndroidManifest.xml
 		INJECTED from /home/koassa/projetMobile/SGStock/platforms/android/AndroidManifest.xml
 	android:hardwareAccelerated
 		ADDED from /home/koassa/projetMobile/SGStock/platforms/android/AndroidManifest.xml:2:11-45
 	android:versionCode
-		ADDED from /home/koassa/projetMobile/SGStock/platforms/android/AndroidManifest.xml:2:46-69
+		ADDED from /home/koassa/projetMobile/SGStock/platforms/android/AndroidManifest.xml:2:46-73
 		INJECTED from /home/koassa/projetMobile/SGStock/platforms/android/AndroidManifest.xml
 		INJECTED from /home/koassa/projetMobile/SGStock/platforms/android/AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/koassa/projetMobile/SGStock/platforms/android/AndroidManifest.xml:2:125-183
+		ADDED from /home/koassa/projetMobile/SGStock/platforms/android/AndroidManifest.xml:2:129-187
 supports-screens
 ADDED from /home/koassa/projetMobile/SGStock/platforms/android/AndroidManifest.xml:3:5-191
 	android:largeScreens

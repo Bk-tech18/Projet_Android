@@ -20,4 +20,9 @@
     </button-->  
     ## ici seront afficher les différents articles
    </ion-list>
+   <ion-list>
+    <ion-item *ngFor="let art of arts">
+      <h2>{{ art.nom }}</h2>
+    </ion-item>
+  </ion-list>
 </ion-content>

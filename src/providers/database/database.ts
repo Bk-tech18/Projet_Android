@@ -29,7 +29,7 @@ export class DatabaseProvider {
     this.databaseReady = new BehaviorSubject(false);
     this.platform.ready().then(() => {
       this.sqlite.create({
-        name: 'developers.db',
+        name: 'DATABASE_FILE_NAME',
         location: 'default'
       })
         .then((db: SQLiteObject) => {
@@ -57,10 +57,10 @@ export class DatabaseProvider {
           .catch(e => console.error(e));
       });
   }
- 
-  addcateg(name, skill, years) {
-    let data = [name, skill, years]
-    return this.database.executeSql("INSERT INTO developer (name, skill, yearsOfExperience) VALUES (?, ?, ?)", data).then(data => {
+ // les categories
+  addcateg(name) {
+    let data = [name]
+    return this.database.executeSql("INSERT INTO Categorie (name) VALUES (?)", data).then(data => {
       return data;
     }, err => {
       console.log('Error: ', err);
@@ -69,11 +69,11 @@ export class DatabaseProvider {
   }
  
   getAllcategs() {
-    return this.database.executeSql("SELECT * FROM developer", []).then((data) => {
+    return this.database.executeSql("SELECT * FROM Categorie", []).then((data) => {
       let categs = [];
       if (data.rows.length > 0) {
         for (var i = 0; i < data.rows.length; i++) {
-          categs.push({ name: data.rows.item(i).name, skill: data.rows.item(i).skill, yearsOfExperience: data.rows.item(i).yearsOfExperience });
+          categs.push({ name: data.rows.item(i).name });
         }
       }
       return categs;
@@ -82,7 +82,33 @@ export class DatabaseProvider {
       return [];
     });
   }
- 
+ // les articles
+// nom	TEXT, categorieId	INTEGER,QuantiteArt	NUMERIC,prixUnit NUMERIC,
+ addArticle(nom, categorieId, QuantiteArt, prixUnit) {
+  let data = [nom, categorieId, QuantiteArt, prixUnit]
+  return this.database.executeSql("INSERT INTO  ARTICLE (nom, categorieId, QuantiteArt, prixUnit) VALUES (?,?,?,?)", data).then(data => {
+    return data;
+  }, err => {
+    console.log('Error: ', err);
+    return err;
+  });
+}
+
+getArticles() {
+  return this.database.executeSql("SELECT * FROM  ARTICLE", []).then((data) => {
+    let categs = [];
+    if (data.rows.length > 0) {
+      for (var i = 0; i < data.rows.length; i++) {
+        categs.push({ name: data.rows.item(i).nom });
+      }
+    }
+    return categs;
+  }, err => {
+    console.log('Error: ', err);
+    return [];
+  });
+}
+
   getDatabaseState() {
     return this.databaseReady.asObservable();
   }

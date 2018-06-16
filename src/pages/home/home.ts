@@ -26,7 +26,7 @@ export class HomePage {
 	      { title: 'Article', component: ArticlePage, icon:'A' },
 	      { title: 'Catégorie', component: CategoriePage, icon:'C' },
 	      { title: 'Historique', component: HistoriquePage, icon:'H' },
-        { title: 'Help', component: HelpPage, icon:'?' },
+      //  { title: 'Help', component: HelpPage, icon:'?' },
         { title: 'Bilan', component: BilanPage, icon:'B' },
 	      { title: 'Entrées', component: EntreePage, icon:'E' },
         { title: 'Sorties', component: SortiePage, icon:'S' }

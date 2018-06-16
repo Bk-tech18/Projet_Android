@@ -25,7 +25,7 @@ export class CategoriePage {
   }
  
   addcateg() {
-    this.databaseprovider.addcateg(this.categ['name'], this.categ['skill'], parseInt(this.categ['yearsOfExperience']))
+    this.databaseprovider.addcateg(this.categ['name'])
     .then(data => {
       this.loadcategData();
     });

@@ -5,6 +5,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
+import { HelpPage } from '../pages/help/help';
 
 @Component({
   templateUrl: 'app.html'
@@ -24,7 +25,8 @@ export class MyApp {
     });
 
     this.pages = [
-      { title: 'Home', component: HomePage, icon:'H' }
+      { title: 'Home', component: HomePage, icon:'H' },
+      { title: 'Help', component: HelpPage, icon:'?' }
     ];  
   }
 
@@ -35,5 +37,11 @@ export class MyApp {
     //let nav = this.app.getRootNav();
     //nav.setRoot(HomePage);
     }
+
+    openPage(pages){
+
+      this.nav.setRoot(pages.component);
+      
+      }
 }
 

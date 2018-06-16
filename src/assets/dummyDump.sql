@@ -1,4 +1,8 @@
-CREATE TABLE IF NOT EXISTS Categorie(id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,skill TEXT,yearsOfExperience INTEGER);
-INSERT INTO Categorie(name, skill, yearsOfExperience) VALUES ('Simon', 'Ionic', '4');
-INSERT INTO Categorie(name, skill, yearsOfExperience) VALUES ('Jorge', 'Firebase', '2');
-INSERT INTO Categorie(name, skill, yearsOfExperience) VALUES ('Max', 'Startup', '5');
+CREATE TABLE IF NOT EXISTS Categorie(idCat INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT);
+CREATE TABLE IF NOT EXISTS ARTICLE (idArt	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, nom	TEXT, categorieId	INTEGER,QuantiteArt	NUMERIC,prixUnit NUMERIC, FOREIGN KEY(categorieId) REFERENCES idCat);
+CREATE TABLE IF NOT EXISTS OPERATION (idOp	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, typeOp	TEXT);
+CREATE TABLE IF NOT EXISTS ARTICLEOP (Article	INTEGER NOT NULL,Operation	INTEGER NOT NULL,Date	TEXT,Quantite	NUMERIC,PRIMARY KEY(Article,Operation),FOREIGN KEY(Article) REFERENCES idArt,FOREIGN KEY(Operation) REFERENCES idOp);
+INSERT INTO Categorie(name) VALUES ('Savon');
+INSERT INTO Categorie(name) VALUES ('Huile');
+INSERT INTO Categorie(name) VALUES ('Pommade');
+
