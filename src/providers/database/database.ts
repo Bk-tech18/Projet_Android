@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+//import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+//import { Component } from '@angular/core';
+//import { NavController } from 'ionic-angular';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 //import { CategoriePage } from '../../pages/categorie/categorie';
 //import { Injectable } from '@angular/core';
@@ -29,7 +29,7 @@ export class DatabaseProvider {
     this.databaseReady = new BehaviorSubject(false);
     this.platform.ready().then(() => {
       this.sqlite.create({
-        name: 'DATABASE_FILE_NAME',
+        name: DATABASE_FILE_NAME,
         location: 'default'
       })
         .then((db: SQLiteObject) => {
@@ -96,13 +96,13 @@ export class DatabaseProvider {
 
 getArticles() {
   return this.database.executeSql("SELECT * FROM  ARTICLE", []).then((data) => {
-    let categs = [];
+    let arts = [];
     if (data.rows.length > 0) {
       for (var i = 0; i < data.rows.length; i++) {
-        categs.push({ name: data.rows.item(i).nom });
+        arts.push({ nom: data.rows.item(i).nom });
       }
     }
-    return categs;
+    return arts;
   }, err => {
     console.log('Error: ', err);
     return [];

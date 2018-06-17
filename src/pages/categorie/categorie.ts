@@ -1,6 +1,6 @@
 import { DatabaseProvider } from './../../providers/database/database';
 import { Component } from '@angular/core';
-import { NavController, Platform } from 'ionic-angular';
+import { NavController} from 'ionic-angular';
  
 @Component({
   selector: 'page-categorie',
@@ -10,7 +10,7 @@ export class CategoriePage {
   categ = {};
   categs = [];
  
-  constructor(public navCtrl: NavController, private databaseprovider: DatabaseProvider, private platform: Platform) {
+  constructor(public navCtrl: NavController, private databaseprovider: DatabaseProvider) {
     this.databaseprovider.getDatabaseState().subscribe(rdy => {
       if (rdy) {
         this.loadcategData();
@@ -28,7 +28,9 @@ export class CategoriePage {
     this.databaseprovider.addcateg(this.categ['name'])
     .then(data => {
       this.loadcategData();
+      this.categ['name']="";
     });
+    
     this.categ = {};
   }
  

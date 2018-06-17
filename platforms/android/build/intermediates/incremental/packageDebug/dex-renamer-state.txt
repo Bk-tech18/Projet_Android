@@ -1,4 +1,4 @@
-#Sat Jun 16 18:24:58 GMT 2018
+#Sun Jun 17 14:34:34 GMT 2018
 base.0=/home/koassa/projetMobile/SGStock/platforms/android/build/intermediates/transforms/dex/debug/folders/1000/1f/main
 renamed.0=classes.dex
 file.0=/home/koassa/projetMobile/SGStock/platforms/android/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex

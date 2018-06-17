@@ -27,23 +27,23 @@
      -->
       <ion-item>
         <ion-label >Nom:</ion-label>
-        <ion-input [(ngModel)]="art.nom" placeholder="Nom article"></ion-input>
+        <ion-input [(ngModel)]="art.nom" placeholder="Nom article" required></ion-input>
       </ion-item> 
       
       <ion-item> 
-      <ion-label >Catégorie</ion-label>
-      <ion-select [(ngModel)]="art.categorieId" *ngFor="let cat of categos">
-        <ion-option value= {{ cat.idCat }}> {{ cat.name }}</ion-option>
-      </ion-select>
-  
+       <ion-label >Catégorie</ion-label>
+      <ion-select [(ngModel)]="art.categorieId" >
+        <ion-option *ngFor="let cat of categos" [value]= "cat.idCat"required > {{ cat.name }}</ion-option>
+      </ion-select> 
+      
       </ion-item>
       <ion-item>
           <ion-label >Quantité:</ion-label>
-          <ion-input [(ngModel)]="art.QuantiteArt" placeholder="Quantité Article"></ion-input>
+          <ion-input [(ngModel)]="art.QuantiteArt" placeholder="Quantité Article" required></ion-input>
       </ion-item>
       <ion-item>
       <ion-label >Prix Unitaire:</ion-label>
-      <ion-input [(ngModel)]="art.prixUnit" placeholder="prix Unitaire"></ion-input>
+      <ion-input [(ngModel)]="art.prixUnit" placeholder="prix Unitaire" required ></ion-input>
       </ion-item>
       <div padding>
         <button ion-button full (click)="addart()" >Enregistrer</button>

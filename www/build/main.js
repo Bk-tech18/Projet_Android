@@ -1,4 +1,4 @@
-webpackJsonp([4],{
+webpackJsonp([7],{
 
 /***/ 152:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -21,11 +21,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var CategoriePage = /** @class */ (function () {
-    function CategoriePage(navCtrl, databaseprovider, platform) {
+    function CategoriePage(navCtrl, databaseprovider) {
         var _this = this;
         this.navCtrl = navCtrl;
         this.databaseprovider = databaseprovider;
-        this.platform = platform;
         this.categ = {};
         this.categs = [];
         this.databaseprovider.getDatabaseState().subscribe(function (rdy) {
@@ -45,6 +44,7 @@ var CategoriePage = /** @class */ (function () {
         this.databaseprovider.addcateg(this.categ['name'])
             .then(function (data) {
             _this.loadcategData();
+            _this.categ['name'] = "";
         });
         this.categ = {};
     };
@@ -52,7 +52,7 @@ var CategoriePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
             selector: 'page-categorie',template:/*ion-inline-start:"/home/koassa/projetMobile/SGStock/src/pages/categorie/categorie.html"*/'<ion-header>\n  <ion-toolbar>\n	<button ion-button menuToggle>\n      <ion-icon name="home"></ion-icon>\n    </button>\n    \n    <ion-title>Catégorie </ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only color="royal"  >\n      <ion-icon name="md-add"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n \n<ion-content padding>\n  <ion-item>\n    <ion-label stacked>Nom Catégorie</ion-label>\n    <ion-input [(ngModel)]="categ.name" placeholder="categ Name"></ion-input>\n  </ion-item>\n  \n  <button ion-button full (click)="addcateg()">Enregistrer Catégorie</button>\n \n  <ion-list>\n    <ion-item *ngFor="let dev of categs">\n      <h2>{{ dev.name }}</h2>\n    </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/home/koassa/projetMobile/SGStock/src/pages/categorie/categorie.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_0__providers_database_database__["a" /* DatabaseProvider */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* Platform */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_0__providers_database_database__["a" /* DatabaseProvider */]])
     ], CategoriePage);
     return CategoriePage;
 }());
@@ -97,7 +97,7 @@ var BilanPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-bilan',template:/*ion-inline-start:"/home/koassa/projetMobile/SGStock/src/pages/bilan/bilan.html"*/'<!--\n  Generated template for the BilanPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-toolbar>\n	<button ion-button menuToggle>\n      <ion-icon name="home"></ion-icon>\n    </button>\n    \n    <ion-title>Bilan </ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only color="royal"  >\n      <ion-icon name="md-add"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n\n<ion-content padding>\n<p> Afficher le Bilan des opérations effectuées</p>\n<p>le Bilan est soit journalier, hebdomadaire, mensuel...</p>\n</ion-content>\n'/*ion-inline-end:"/home/koassa/projetMobile/SGStock/src/pages/bilan/bilan.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
     ], BilanPage);
     return BilanPage;
 }());
@@ -142,7 +142,7 @@ var EntreePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-entree',template:/*ion-inline-start:"/home/koassa/projetMobile/SGStock/src/pages/entree/entree.html"*/'<!--\n  Generated template for the EntreePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-toolbar>\n	<button ion-button menuToggle>\n      <ion-icon name="home"></ion-icon>\n    </button>\n    \n    <ion-title>Entrées </ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only color="royal"  >\n      <ion-icon name="md-add"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n  <p> Afficher les différents approvisionnements effectuées</p>\n</ion-content>\n'/*ion-inline-end:"/home/koassa/projetMobile/SGStock/src/pages/entree/entree.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
     ], EntreePage);
     return EntreePage;
 }());
@@ -187,7 +187,7 @@ var SortiePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-sortie',template:/*ion-inline-start:"/home/koassa/projetMobile/SGStock/src/pages/sortie/sortie.html"*/'<!--\n  Generated template for the SortiePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n     <ion-toolbar>\n   	<button ion-button menuToggle>\n         <ion-icon name="home"></ion-icon>\n       </button>\n      \n       <ion-title>Sorties </ion-title>\n       <ion-buttons end>\n         <button ion-button icon-only color="royal"  >\n         <ion-icon name="md-add"></ion-icon>\n         </button>\n       </ion-buttons>\n     </ion-toolbar>\n   </ion-header>\n\n\n<ion-content padding>\ntest\n</ion-content>\n'/*ion-inline-end:"/home/koassa/projetMobile/SGStock/src/pages/sortie/sortie.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
     ], SortiePage);
     return SortiePage;
 }());
@@ -217,21 +217,33 @@ webpackEmptyAsyncContext.id = 166;
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"../pages/add-categorie/add-categorie.module": [
-		696,
-		3
-	],
-	"../pages/bilan/bilan.module": [
+	"../pages/add-bilan/add-bilan.module": [
 		693,
 		2
 	],
-	"../pages/entree/entree.module": [
+	"../pages/add-categorie/add-categorie.module": [
 		694,
+		6
+	],
+	"../pages/add-entree/add-entree.module": [
+		695,
 		1
 	],
-	"../pages/sortie/sortie.module": [
-		695,
+	"../pages/add-sortie/add-sortie.module": [
+		696,
 		0
+	],
+	"../pages/bilan/bilan.module": [
+		697,
+		5
+	],
+	"../pages/entree/entree.module": [
+		698,
+		4
+	],
+	"../pages/sortie/sortie.module": [
+		699,
+		3
 	]
 };
 function webpackAsyncContext(req) {
@@ -278,6 +290,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+//import { HelpPage } from '../help/help';
 
 
 
@@ -308,14 +321,14 @@ var HomePage = /** @class */ (function () {
         nav.setRoot(HomePage_1);
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Nav */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Nav */])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */])
     ], HomePage.prototype, "nav", void 0);
     HomePage = HomePage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-home',template:/*ion-inline-start:"/home/koassa/projetMobile/SGStock/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="home"></ion-icon>\n    </button>\n    <ion-title>\n      SGStock\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n<!--button ion-button icon-left>\n  <ion-icon name="home"></ion-icon>\n  Left Icon\n</button-->\n<ion-grid text-center class="couleur-bleu">\n  <ion-row >\n    <ion-col col-6 *ngFor="let p of pages">\n      <button ion-button outline (click)="openPage(p)">{{p.icon}}</button><br> {{p.title}}\n      </ion-col>\n    \n  </ion-row>\n</ion-grid>\n</ion-content>\n'/*ion-inline-end:"/home/koassa/projetMobile/SGStock/src/pages/home/home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* App */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
     ], HomePage);
     return HomePage;
     var HomePage_1;
@@ -378,7 +391,7 @@ var ArticlePage = /** @class */ (function () {
             selector: 'page-article',template:/*ion-inline-start:"/home/koassa/projetMobile/SGStock/src/pages/article/article.html"*/'<!--\n  Generated template for the ArticlePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-toolbar>\n	<button ion-button menuToggle>\n      <ion-icon name="home"></ion-icon>\n    </button>\n    <ion-buttons start>\n      <button ion-button icon-only color="royal">\n        <ion-icon name="search"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>article</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only color="royal">\n        <ion-icon name="person-add"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n<ion-content padding>\n  <!--h2>Add Data</h2>\n  <form (ngSubmit)="saveData()">\n    <ion-item>\n      <ion-label>Date</ion-label>\n      <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="data.date" name="date" required=""></ion-datetime->\n    </ion-item>\n    <ion-item>\n      <ion-label>Catégorie</ion-label>\n      <ion-select  name="categorie" [(ngModel)]="categorie" required="">\n        <ion-option value="Income">Income</ion-option>\n        <ion-option value="Expense">Expense</ion-option>\n      </ion-select>\n    </ion-item>\n    <ion-item>\n      <ion-label>Désignation</ion-label>\n      <ion-input type="text" placeholder="Désignation" name="Désignation" required="" ></ion-input>\n    </ion-item>\n    \n    <button ion-button type="submit" block>Save Data</button>\n  </form-->\n  <ion-list>\n    <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">\n      {{ item }}\n    </button>  \n  </ion-list>\n  \n</ion-content>'/*ion-inline-end:"/home/koassa/projetMobile/SGStock/src/pages/article/article.html"*/,
             template: "\n  <ion-header>\n  <ion-toolbar>\n\t<button ion-button menuToggle>\n      <ion-icon name=\"home\"></ion-icon>\n    </button>\n    \n    <ion-title>Article </ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only color=\"royal\" (click)=\"addArticle()\" >\n      <ion-icon name=\"md-add\"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n   \n    <ion-tabs>\n      <ion-tab tabIcon=\"clipboard\" [root]=\"TabsPage\"></ion-tab>\n      <ion-tab tabIcon=\"search\" [root]=\"SearchPage\">g</ion-tab>\n    </ion-tabs>"
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* App */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
     ], ArticlePage);
     return ArticlePage;
 }());
@@ -423,7 +436,7 @@ var SearchPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-search',template:/*ion-inline-start:"/home/koassa/projetMobile/SGStock/src/pages/search/search.html"*/'<!--\n  Generated template for the SearchPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Search</ion-title>\n  </ion-navbar>\n\n</ion-header>\n<ion-content padding>\ninterface pour effectuer de la recherche sur les articles\n<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n<ion-list>\n  <ion-item *ngFor="let item of items">\n    {{ item }}\n  </ion-item>\n</ion-list>\n</ion-content>\n'/*ion-inline-end:"/home/koassa/projetMobile/SGStock/src/pages/search/search.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
     ], SearchPage);
     return SearchPage;
 }());
@@ -491,7 +504,7 @@ var TabsPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-tabs',template:/*ion-inline-start:"/home/koassa/projetMobile/SGStock/src/pages/tabs/tabs.html"*/'<!--\n  Generated template for the TabsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Ajouter Article</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>\n    <!--button ion-item *ngFor="let item of items" (click)="itemSelected(item)">\n      {{ item }}\n    </button-->  \n    ## ici seront afficher les différents articles\n   </ion-list>\n   <ion-list>\n    <ion-item *ngFor="let art of arts">\n      <h2>{{ art.nom }}</h2>\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/home/koassa/projetMobile/SGStock/src/pages/tabs/tabs.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_database_database__["a" /* DatabaseProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_database_database__["a" /* DatabaseProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */]])
     ], TabsPage);
     return TabsPage;
 }());
@@ -528,7 +541,8 @@ import { HistoriquePage } from '../historique/historique';
 import { HelpPage } from '../help/help';
 import { SQLitePage } from '../sqlite/sqlite';*/
 var AddarticlePage = /** @class */ (function () {
-    function AddarticlePage(app, navCtrl, navParams, databaseprovider) {
+    function AddarticlePage(alertCtrl, app, navCtrl, navParams, databaseprovider) {
+        this.alertCtrl = alertCtrl;
         this.app = app;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -536,6 +550,7 @@ var AddarticlePage = /** @class */ (function () {
         this.art = {};
         this.arts = [];
         this.categos = [];
+        this.loadcatData();
     }
     AddarticlePage.prototype.loadcatData = function () {
         var _this = this;
@@ -551,21 +566,40 @@ var AddarticlePage = /** @class */ (function () {
     };
     AddarticlePage.prototype.addart = function () {
         var _this = this;
-        this.databaseprovider.addArticle(this.art['nom'], this.art['categorieId'], this.art['QuantiteArt'], this.art['prixUnit'])
-            .then(function (data) {
-            _this.loadartData();
+        if (this.art['nom'] != null && this.art['categorieId'] != null && parseInt(this.art['QuantiteArt']) != null && parseInt(this.art['prixUnit']) != null) {
+            this.databaseprovider.addArticle(this.art['nom'], this.art['categorieId'], parseInt(this.art['QuantiteArt']), parseInt(this.art['prixUnit']))
+                .then(function (data) {
+                // this.loadartData();
+                _this.showAlert();
+            });
+            this.art = {};
+        }
+        else {
+            var alert_1 = this.alertCtrl.create({
+                title: 'Information!',
+                subTitle: 'Echec, le champs est vide!',
+                buttons: ['OK']
+            });
+            alert_1.present();
+        }
+    };
+    AddarticlePage.prototype.showAlert = function () {
+        var alert = this.alertCtrl.create({
+            title: 'Information!',
+            subTitle: 'Enregistrer avec succès!',
+            buttons: ['OK']
         });
-        this.art = {};
+        alert.present();
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Nav */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Nav */])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */])
     ], AddarticlePage.prototype, "nav", void 0);
     AddarticlePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-add-article',template:/*ion-inline-start:"/home/koassa/projetMobile/SGStock/src/pages/add-article/add-article.html"*/'<!--\n  Generated template for the TabsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n    <ion-navbar>\n      <ion-title>Ajouter Article</ion-title>\n    </ion-navbar>\n  \n  </ion-header>\n  \n  \n  <ion-content padding>\n    <ion-list>\n      <!--button ion-item *ngFor="let item of items" (click)="itemSelected(item)">\n        {{ item }}\n      </button-->  \n      <!-- <ion-item>\n        <ion-label stacked>Nom Catégorie</ion-label>\n        <ion-input [(ngModel)]="categ.name" placeholder="categ Name"></ion-input>\n      </ion-item>\n      \n      <button ion-button full (click)="addcateg()">Enregistrer Catégorie</button>\n     -->\n      <ion-item>\n        <ion-label >Nom:</ion-label>\n        <ion-input [(ngModel)]="art.nom" placeholder="Nom article"></ion-input>\n      </ion-item> \n      \n      <ion-item> \n      <ion-label >Catégorie</ion-label>\n      <ion-select [(ngModel)]="art.categorieId" *ngFor="let cat of categos">\n        <ion-option value= {{ cat.idCat }}> {{ cat.name }}</ion-option>\n      </ion-select>\n  \n      </ion-item>\n      <ion-item>\n          <ion-label >Quantité:</ion-label>\n          <ion-input [(ngModel)]="art.QuantiteArt" placeholder="Quantité Article"></ion-input>\n      </ion-item>\n      <ion-item>\n      <ion-label >Prix Unitaire:</ion-label>\n      <ion-input [(ngModel)]="art.prixUnit" placeholder="prix Unitaire"></ion-input>\n      </ion-item>\n      <div padding>\n        <button ion-button full (click)="addart()" >Enregistrer</button>\n      </div>\n    </ion-list>\n  </ion-content>\n  '/*ion-inline-end:"/home/koassa/projetMobile/SGStock/src/pages/add-article/add-article.html"*/
+            selector: 'page-add-article',template:/*ion-inline-start:"/home/koassa/projetMobile/SGStock/src/pages/add-article/add-article.html"*/'<!--\n  Generated template for the TabsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n    <ion-navbar>\n      <ion-title>Ajouter Article</ion-title>\n    </ion-navbar>\n  \n  </ion-header>\n  \n  \n  <ion-content padding>\n    <ion-list>\n      <!--button ion-item *ngFor="let item of items" (click)="itemSelected(item)">\n        {{ item }}\n      </button-->  \n      <!-- <ion-item>\n        <ion-label stacked>Nom Catégorie</ion-label>\n        <ion-input [(ngModel)]="categ.name" placeholder="categ Name"></ion-input>\n      </ion-item>\n      \n      <button ion-button full (click)="addcateg()">Enregistrer Catégorie</button>\n     -->\n      <ion-item>\n        <ion-label >Nom:</ion-label>\n        <ion-input [(ngModel)]="art.nom" placeholder="Nom article" required></ion-input>\n      </ion-item> \n      \n      <ion-item> \n       <ion-label >Catégorie</ion-label>\n      <ion-select [(ngModel)]="art.categorieId" >\n        <ion-option *ngFor="let cat of categos" [value]= "cat.idCat"required > {{ cat.name }}</ion-option>\n      </ion-select> \n      \n      </ion-item>\n      <ion-item>\n          <ion-label >Quantité:</ion-label>\n          <ion-input [(ngModel)]="art.QuantiteArt" placeholder="Quantité Article" required></ion-input>\n      </ion-item>\n      <ion-item>\n      <ion-label >Prix Unitaire:</ion-label>\n      <ion-input [(ngModel)]="art.prixUnit" placeholder="prix Unitaire" required ></ion-input>\n      </ion-item>\n      <div padding>\n        <button ion-button full (click)="addart()" >Enregistrer</button>\n      </div>\n    </ion-list>\n  </ion-content>\n  '/*ion-inline-end:"/home/koassa/projetMobile/SGStock/src/pages/add-article/add-article.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* App */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_database_database__["a" /* DatabaseProvider */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_database_database__["a" /* DatabaseProvider */]])
     ], AddarticlePage);
     return AddarticlePage;
 }());
@@ -609,7 +643,7 @@ var HistoriquePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-historique',template:/*ion-inline-start:"/home/koassa/projetMobile/SGStock/src/pages/historique/historique.html"*/'<!--\n  Generated template for the HistoriquePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n<ion-navbar>\n	<button ion-button menuToggle>\n      <ion-icon name="home"></ion-icon>\n    </button>\n  \n    <ion-title>historique</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/home/koassa/projetMobile/SGStock/src/pages/historique/historique.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]])
     ], HistoriquePage);
     return HistoriquePage;
 }());
@@ -654,7 +688,7 @@ var HelpPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-help',template:/*ion-inline-start:"/home/koassa/projetMobile/SGStock/src/pages/help/help.html"*/'<!--\n  Generated template for the HelpPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n<ion-navbar>\n	<button ion-button menuToggle>\n      <ion-icon name="home"></ion-icon>\n    </button>\n  \n    <ion-title>help</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/home/koassa/projetMobile/SGStock/src/pages/help/help.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
     ], HelpPage);
     return HelpPage;
 }());
@@ -703,7 +737,7 @@ var AddCategoriePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-add-categorie',template:/*ion-inline-start:"/home/koassa/projetMobile/SGStock/src/pages/add-categorie/add-categorie.html"*/'<!--\n  Generated template for the AddCategoriePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>add-categorie</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n hello\n <!--form (ngSubmit)="EnregistrerCateg()">\n <ion-item>\n    <ion-label >Catégorie</ion-label>\n    <ion-input type="text" [(ngModel)]="data.categ" name="categ"></ion-input>\n    </ion-item>\n <div padding>\n    <button ion-button outline type="submit">enregistrer</button>\n  </div>\n</form-->\n</ion-content>\n'/*ion-inline-end:"/home/koassa/projetMobile/SGStock/src/pages/add-categorie/add-categorie.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_database_database__["a" /* DatabaseProvider */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_database_database__["a" /* DatabaseProvider */]])
     ], AddCategoriePage);
     return AddCategoriePage;
 }());
@@ -822,16 +856,19 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_7__angular_http__["b" /* HttpModule */],
                 __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["a" /* IonicStorageModule */].forRoot(),
-                __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* MyApp */], {}, {
+                __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["e" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* MyApp */], {}, {
                     links: [
+                        { loadChildren: '../pages/add-bilan/add-bilan.module#AddBilanPageModule', name: 'AddBilanPage', segment: 'add-bilan', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/add-categorie/add-categorie.module#AddCategoriePageModule', name: 'AddCategoriePage', segment: 'add-categorie', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/add-entree/add-entree.module#AddEntreePageModule', name: 'AddEntreePage', segment: 'add-entree', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/add-sortie/add-sortie.module#AddSortiePageModule', name: 'AddSortiePage', segment: 'add-sortie', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/bilan/bilan.module#BilanPageModule', name: 'BilanPage', segment: 'bilan', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/entree/entree.module#EntreePageModule', name: 'EntreePage', segment: 'entree', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/sortie/sortie.module#SortiePageModule', name: 'SortiePage', segment: 'sortie', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/add-categorie/add-categorie.module#AddCategoriePageModule', name: 'AddCategoriePage', segment: 'add-categorie', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/sortie/sortie.module#SortiePageModule', name: 'SortiePage', segment: 'sortie', priority: 'low', defaultHistory: [] }
                     ]
                 })
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["b" /* IonicApp */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["c" /* IonicApp */]],
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_10__pages_home_home__["a" /* HomePage */],
@@ -855,7 +892,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_8__ionic_native_sqlite_porter__["a" /* SQLitePorter */],
                 __WEBPACK_IMPORTED_MODULE_23__providers_database_database__["a" /* DatabaseProvider */],
                 __WEBPACK_IMPORTED_MODULE_24__providers_models_models__["a" /* ModelsProvider */],
-                { provide: __WEBPACK_IMPORTED_MODULE_2__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["c" /* IonicErrorHandler */] }
+                { provide: __WEBPACK_IMPORTED_MODULE_2__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["d" /* IonicErrorHandler */] }
                 //{provide: ErrorHandler, useClass: IonicErrorHandler}
             ]
         })
@@ -891,7 +928,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+//import { HttpClient } from '@angular/common/http';
 
+//import { Component } from '@angular/core';
+//import { NavController } from 'ionic-angular';
 
 //import { CategoriePage } from '../../pages/categorie/categorie';
 //import { Injectable } from '@angular/core';
@@ -920,7 +960,7 @@ var DatabaseProvider = /** @class */ (function () {
         this.databaseReady = new __WEBPACK_IMPORTED_MODULE_6_rxjs_Rx__["BehaviorSubject"](false);
         this.platform.ready().then(function () {
             _this.sqlite.create({
-                name: 'DATABASE_FILE_NAME',
+                name: DATABASE_FILE_NAME,
                 location: 'default'
             })
                 .then(function (db) {
@@ -986,13 +1026,13 @@ var DatabaseProvider = /** @class */ (function () {
     };
     DatabaseProvider.prototype.getArticles = function () {
         return this.database.executeSql("SELECT * FROM  ARTICLE", []).then(function (data) {
-            var categs = [];
+            var arts = [];
             if (data.rows.length > 0) {
                 for (var i = 0; i < data.rows.length; i++) {
-                    categs.push({ name: data.rows.item(i).nom });
+                    arts.push({ nom: data.rows.item(i).nom });
                 }
             }
-            return categs;
+            return arts;
         }, function (err) {
             console.log('Error: ', err);
             return [];
@@ -1003,7 +1043,7 @@ var DatabaseProvider = /** @class */ (function () {
     };
     DatabaseProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__ionic_native_sqlite_porter__["a" /* SQLitePorter */], __WEBPACK_IMPORTED_MODULE_7__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1__ionic_native_sqlite__["a" /* SQLite */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_4__angular_http__["a" /* Http */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__ionic_native_sqlite_porter__["a" /* SQLitePorter */], __WEBPACK_IMPORTED_MODULE_7__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1__ionic_native_sqlite__["a" /* SQLite */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_4__angular_http__["a" /* Http */]])
     ], DatabaseProvider);
     return DatabaseProvider;
 }());
@@ -1064,13 +1104,13 @@ var MyApp = /** @class */ (function () {
         this.nav.setRoot(pages.component);
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Nav */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Nav */])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/koassa/projetMobile/SGStock/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <!-- <button menuClose ion-item  (click)="homePage()">  -->\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}} 	 \n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n\n\n'/*ion-inline-end:"/home/koassa/projetMobile/SGStock/src/app/app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
     return MyApp;
 }());
@@ -1156,7 +1196,7 @@ var SQLitePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-sqlite',template:/*ion-inline-start:"/home/koassa/projetMobile/SGStock/src/pages/sqlite/sqlite.html"*/'<!--\n  Generated template for the SqLitePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-toolbar>\n    <button ion-button menuToggle>\n        <ion-icon name="home"></ion-icon>\n      </button>\n      \n      <ion-title>SQLitePage</ion-title>\n      <ion-buttons end>\n        <button ion-button icon-only color="royal">\n          <ion-icon name="md-add"></ion-icon>\n        </button>\n      </ion-buttons>\n    </ion-toolbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <form (ngSubmit)="Enregistrer()">\n\n    <ion-item>\n      <ion-label floating>Catégorie</ion-label>\n      <ion-input type="text" [(ngModel)]="data.categ" name="categ" required=""></ion-input>\n    </ion-item>\n    \n    <ion-item>\n      <button ion-button type="submit" outline >Enregistrer</button>\n    </ion-item>\n  </form>\n</ion-content>\n'/*ion-inline-end:"/home/koassa/projetMobile/SGStock/src/pages/sqlite/sqlite.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_sqlite__["a" /* SQLite */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_sqlite__["a" /* SQLite */]])
     ], SQLitePage);
     return SQLitePage;
 }());

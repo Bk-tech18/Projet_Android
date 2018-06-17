@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
-import { App, NavController, NavParams, Nav } from 'ionic-angular';
+import { App, NavController, NavParams, Nav, AlertController } from 'ionic-angular';
 import { DatabaseProvider } from '../../providers/database/database';
+
 //import { CategoriePage } from '../categorie/categorie';
 // importation des différentes pages intervenants dans cette page controller
 /*import { ArticlePage } from '../article/article';
@@ -21,14 +22,15 @@ export class AddarticlePage {
 	  @ViewChild(Nav) nav: Nav;
 	  pages: Array<{title: string, component: any, icon: string}>;
 
-  	  constructor(public app: App, public navCtrl: NavController, public navParams: NavParams, private databaseprovider: DatabaseProvider) {
-       
+  	  constructor(public alertCtrl: AlertController,public app: App, public navCtrl: NavController, public navParams: NavParams, private databaseprovider: DatabaseProvider) {
+       this.loadcatData();
     }
 
     loadcatData() {
       this.databaseprovider.getAllcategs().then(data => {
-        this.categos = data;
-      })
+       this.categos = data;
+      
+     })
     }
 
      loadartData() {
@@ -36,12 +38,30 @@ export class AddarticlePage {
       this.arts = data;
     })
   }
-    addart() {//nom, categorieId, QuantiteArt, prixUnit
-      this.databaseprovider.addArticle(this.art['nom'], this.art['categorieId'], this.art['QuantiteArt'], this.art['prixUnit'])
+    addart() {
+      if ( this.art['nom']!= null && this.art['categorieId'] != null && parseInt(this.art['QuantiteArt']) != null && parseInt(this.art['prixUnit']) != null){
+      this.databaseprovider.addArticle(this.art['nom'], this.art['categorieId'], parseInt(this.art['QuantiteArt']), parseInt(this.art['prixUnit']))
       .then(data => {
-        this.loadartData();
+       // this.loadartData();
+        this.showAlert();
       });
-      this.art = {};
+     this.art = {};
+    } else{
+      const alert = this.alertCtrl.create({
+        title: 'Information!',
+        subTitle: 'Echec, le champs est vide!',
+        buttons: ['OK']
+      });
+      alert.present();
+    }
+    }
+    showAlert() {
+      const alert = this.alertCtrl.create({
+        title: 'Information!',
+        subTitle: 'Enregistrer avec succès!',
+        buttons: ['OK']
+      });
+      alert.present();
     }
 }
   

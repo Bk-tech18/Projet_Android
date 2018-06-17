@@ -6,7 +6,7 @@ import { App, NavController, NavParams, Nav } from 'ionic-angular';
 import { ArticlePage } from '../article/article';
 import { CategoriePage } from '../categorie/categorie';
 import { HistoriquePage } from '../historique/historique';
-import { HelpPage } from '../help/help';
+//import { HelpPage } from '../help/help';
 import { BilanPage } from '../bilan/bilan';
 import { EntreePage } from '../entree/entree';
 import { SortiePage } from '../sortie/sortie';

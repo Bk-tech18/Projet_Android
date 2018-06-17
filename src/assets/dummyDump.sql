@@ -5,4 +5,6 @@ CREATE TABLE IF NOT EXISTS ARTICLEOP (Article	INTEGER NOT NULL,Operation	INTEGER
 INSERT INTO Categorie(name) VALUES ('Savon');
 INSERT INTO Categorie(name) VALUES ('Huile');
 INSERT INTO Categorie(name) VALUES ('Pommade');
+INSERT INTO ARTICLE ( nom,categorieId,QuantiteArt,prixUnit) VALUES ('Santex',1,20,400);
+
 
